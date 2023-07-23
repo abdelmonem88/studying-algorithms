@@ -18,3 +18,19 @@ const start2 = performance.now();
 console.log(count2(6));
 const end2 = performance.now();
 console.log(`diff ${end2 - start2}`);
+
+// charachters count in string
+console.log(charCount("Hello world!"));
+function charCount(str) {
+  let counter = {};
+  if (str === "") {
+    return null;
+  }
+  for (let char of str) {
+    char = char.toLowerCase();
+    if (/[a-z0-9]/.test(char)) {
+      counter[char] ? counter[char]++ : (counter[char] = 1);
+    }
+  }
+  return counter;
+}
